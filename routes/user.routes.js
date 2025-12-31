@@ -56,9 +56,7 @@ router.post('/login',
             });
         }
         const { username, password } = req.body;
-        const user= await userModel.findOne({
-            username: username
-        });
+        const user = await User.findOne({ username });
         if (!user) {
             return res.status(400).json({
                 message: 'Invalid username or password'
@@ -71,5 +69,14 @@ router.post('/login',
                 message: 'Invalid username or password'
             });
         }
-    }); 
+
+        const token = jwt.sign({
+            userId: user._id,
+            email: user.email,
+            username: user.username
+        },
+            process.env.JWT_SECRET,);
+        res.cookie('token',token)
+        res.send('Login successful')
+        });
 module.exports = router;
