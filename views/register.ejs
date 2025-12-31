@@ -1,97 +1,78 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css" rel="stylesheet" />
+  <title>Register</title>
+</head>
 
-    <!-- Tailwind CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<body class="bg-gray-100 flex justify-center items-center min-h-screen">
 
-    <!-- Flowbite CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css"
-      rel="stylesheet"
-    />
+  <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+    <h2 class="text-2xl font-bold text-center mb-6">Register</h2>
 
-    <title>Register</title>
-  </head>
+    <form action="/users/register" method="POST" class="space-y-4">
 
-  <body class="bg-gray-100 flex items-center justify-center min-h-screen">
+      <!-- USERNAME -->
+      <div>
+        <label class="block text-sm font-medium">Username</label>
+        <input
+          type="text"
+          name="username"
+          placeholder="abhijit123"
+          required
+          class="w-full p-2 border rounded-lg"
+        />
+      </div>
 
-    <div class="bg-white p-6 rounded-lg shadow-md w-full max-w-lg">
-      <h2 class="text-2xl font-bold mb-6 text-center">Register</h2>
+      <!-- AGE -->
+      <div>
+        <label class="block text-sm font-medium">Age</label>
+        <input
+          type="number"
+          name="age"
+          placeholder="22"
+          class="w-full p-2 border rounded-lg"
+        />
+      </div>
 
-      <!-- FORM -->
-      <form action="/users/register" method="POST" class="space-y-4">
+      <!-- EMAIL -->
+      <div>
+        <label class="block text-sm font-medium">Email</label>
+        <input
+          type="email"
+          name="email"
+          placeholder="abhijit@gmail.com"
+          required
+          class="w-full p-2 border rounded-lg"
+        />
+      </div>
 
-        <!-- Name -->
-        <div>
-          <label class="block mb-1 text-sm font-medium text-gray-700">
-            Full Name
-          </label>
-          <input
-            type="text"
-            name="name"
-            placeholder="John"
-            required
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-          />
-        </div>
+      <!-- PASSWORD -->
+      <div>
+        <label class="block text-sm font-medium">Password</label>
+        <input
+          type="password"
+          name="password"
+          placeholder="********"
+          required
+          class="w-full p-2 border rounded-lg"
+        />
+      </div>
 
-        <!-- Age -->
-        <div>
-          <label class="block mb-1 text-sm font-medium text-gray-700">
-            Age
-          </label>
-          <input
-            type="number"
-            name="age"
-            placeholder="22"
-            required
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-          />
-        </div>
+      <button
+        type="submit"
+        class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700"
+      >
+        Register
+      </button>
 
-        <!-- Email -->
-        <div>
-          <label class="block mb-1 text-sm font-medium text-gray-700">
-            Email
-          </label>
-          <input
-            type="email"
-            name="email"
-            placeholder="john@example.com"
-            required
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-          />
-        </div>
+    </form>
+  </div>
 
-        <!-- Password -->
-        <div>
-          <label class="block mb-1 text-sm font-medium text-gray-700">
-            Password
-          </label>
-          <input
-            type="password"
-            name="password"
-            placeholder="••••••••"
-            required
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-          />
-        </div>
-
-        <!-- Submit -->
-        <button
-          type="submit"
-          class="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5"
-        >
-          Register
-        </button>
-      </form>
-    </div>
-
-    <!-- Flowbite JS -->
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
-  </body>
+</body>
 </html>
+
 
